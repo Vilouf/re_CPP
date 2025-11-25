@@ -10,12 +10,23 @@ int main(int argc, char const *argv[]) {
 	}
 
 	std::ifstream	file(argv[1]);
-	std::string	s1 = argv[2];
-	std::string s2 = argv[3];
-	std::string	line;
+	std::string	strFind = argv[2], strReplace = argv[3], newFile = argv[1], line;
+	size_t	i = 0, nl = 0;
 
+	newFile.append(".replace");
+	std::ofstream	outfile(newFile.data());
 	while (std::getline(file, line)) {
 
-		std::cout << line;
+		if (nl != 0)
+			outfile << std::endl;
+		nl = 1;
+		while ((i = line.find(strFind, i)) != (unsigned long)-1) {
+
+			line.insert(i, strReplace);
+			line.erase(i + strReplace.length(), strFind.length());
+		}
+		if (!line.empty())
+			outfile << line;
+		i = 0;
 	}
 }

@@ -8,7 +8,7 @@ void	PhoneBook::PhoneBook_Add( void ) {
 
 	static int	index = 0;
 
-	this->contats[index % 8].init_contact(index % 8);
+	contats[index % 8].init_contact(index % 8);
 	index++;
 }
 
@@ -18,7 +18,7 @@ void	PhoneBook::PhoneBook_Search( void ) const {
 	int			n_input;
 	bool		valid = false;
 
-	if (this->contats[0].check_contact()) {
+	if (contats[0].check_contact()) {
 
 		std::cout << "Phonebook has no contact in it!" << std::endl;
 		return ;
@@ -30,7 +30,7 @@ void	PhoneBook::PhoneBook_Search( void ) const {
 		std::cout << "|----------|----------|----------|----------|" << std::endl;
 		for (int i = 0; i < 8; i++) {
 
-			this->contats[i].view_contact();
+			contats[i].view_contact();
 			std::cout << "|----------|----------|----------|----------|" << std::endl;
 		}
 		std::cout << std::endl;
@@ -58,6 +58,6 @@ void	PhoneBook::PhoneBook_Search( void ) const {
 		}
 	}
 	std::cout << std::endl;
-	this->contats[n_input - 1].display_contact();
+	contats[n_input - 1].display_contact();
 
 }

@@ -32,42 +32,36 @@ std::string	Contact::print_text( std::string str ) const {
 
 void	Contact::init_contact( int i ) {
 
-	try {
-		this->firstName = this->get_input("Enter first name: ");
-		this->lastName = this->get_input("Enter last name: ");
-		this->nickName = this->get_input("Enter nick name: ");
-		this->phoneNumber = this->get_input("Enter phone number: ");
-		this->darkestSecret = this->get_input("Enter darkest secret: ");
-	}
-	catch (std::logic_error &e) {
-
-		return ;
-	}
-	this->index = i;
+	firstName = get_input("Enter first name: ");
+	lastName = get_input("Enter last name: ");
+	nickName = get_input("Enter nick name: ");
+	phoneNumber = get_input("Enter phone number: ");
+	darkestSecret = get_input("Enter darkest secret: ");
+	index = i;
 }
 
 void	Contact::view_contact( void ) const {
 
-	if (this->firstName.empty())
+	if (firstName.empty())
 		return ;
-	std::cout << "|" << std::setw(10) << this->index + 1;
-	std::cout << "|" << std::setw(10) << this->print_text(this->firstName);
-	std::cout << "|" << std::setw(10) << this->print_text(this->lastName);
-	std::cout << "|" << std::setw(10) << this->print_text(this->nickName) << "|" << std::endl;
+	std::cout << "|" << std::setw(10) << index + 1;
+	std::cout << "|" << std::setw(10) << print_text(firstName);
+	std::cout << "|" << std::setw(10) << print_text(lastName);
+	std::cout << "|" << std::setw(10) << print_text(nickName) << "|" << std::endl;
 }
 
 void	Contact::display_contact( void ) const {
 
-	if (this->firstName.empty()) {
+	if (firstName.empty()) {
 
 		std::cout << "This contact does not exist" << std::endl;
 		return ;
 	}
-	std::cout << "first name: " << this->firstName << std::endl;
-	std::cout << "last name: " << this->lastName << std::endl;
-	std::cout << "nick name: " << this->nickName << std::endl;
-	std::cout << "phone number: " << this->phoneNumber << std::endl;
-	std::cout << "darkest secret: " << this->darkestSecret << std::endl;
+	std::cout << "first name: " << firstName << std::endl;
+	std::cout << "last name: " << lastName << std::endl;
+	std::cout << "nick name: " << nickName << std::endl;
+	std::cout << "phone number: " << phoneNumber << std::endl;
+	std::cout << "darkest secret: " << darkestSecret << std::endl;
 }
 
-int	Contact::check_contact( void ) const { return this->firstName.empty(); }
+int	Contact::check_contact( void ) const { return firstName.empty(); }
