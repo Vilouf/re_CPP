@@ -4,6 +4,16 @@ Contact::Contact( void ) { }
 
 Contact::~Contact( void ) { }
 
+int	is_input_printable( std::string input ) {
+
+	for ( size_t i = 0; i < input.length() ; i++ ) {
+
+		if (std::isprint(input[i]) == 0)
+			return (0);
+	}
+	return (1);
+}
+
 std::string	Contact::get_input( std::string str ) const {
 
 	std::string	input;
@@ -13,7 +23,7 @@ std::string	Contact::get_input( std::string str ) const {
 		std::cout << str << std::flush;
 		if (std::getline(std::cin, input) == 0)
 			break;
-		if (input.empty()) {
+		if (input.empty() || is_input_printable(input) == 0) {
 
 			std::cout << "Invalid input" << std::endl;
 		}

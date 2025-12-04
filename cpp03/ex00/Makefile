@@ -1,6 +1,6 @@
-NAME = Fixed
+NAME = ClapTrap
 
-F = main Fixed Point bsp
+F = main ClapTrap
 
 SRC = $(foreach f, $(F), $(f).cpp)
 

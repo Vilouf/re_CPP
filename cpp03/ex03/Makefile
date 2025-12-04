@@ -1,6 +1,6 @@
-NAME = Fixed
+NAME = FragTrap
 
-F = main Fixed Point bsp
+F = main ClapTrap ScavTrap FragTrap
 
 SRC = $(foreach f, $(F), $(f).cpp)
 

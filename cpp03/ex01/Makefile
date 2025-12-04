@@ -1,6 +1,6 @@
-NAME = Fixed
+NAME = ScavTrap
 
-F = main Fixed Point bsp
+F = main ClapTrap ScavTrap
 
 SRC = $(foreach f, $(F), $(f).cpp)
 
