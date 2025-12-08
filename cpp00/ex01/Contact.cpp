@@ -22,7 +22,7 @@ std::string	Contact::get_input( std::string str ) const {
 
 		std::cout << str << std::flush;
 		if (std::getline(std::cin, input) == 0)
-			break;
+			std::exit(1);
 		if (input.empty() || is_input_printable(input) == 0) {
 
 			std::cout << "Invalid input" << std::endl;

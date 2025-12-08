@@ -16,5 +16,6 @@ int main()
 	b.beRepaired(10);
 	test.highFivesGuys();
 
+	test.WhoAmI();
 	return 0;
 }

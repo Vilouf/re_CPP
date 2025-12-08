@@ -49,10 +49,10 @@ void	Account::_displayTimestamp( void ) {
 
 	tm *ltm = localtime(&now);
 	std::cout << "[" << 1900 + ltm->tm_year;
-	std::cout << 1 + ltm->tm_mon;
-	std::cout << ltm->tm_mday;
-	std::cout << "_" << 5+ltm->tm_hour;
-	std::cout << 30+ltm->tm_min;
+	std::cout << (ltm->tm_mon > 9 ? "" : "0") << 1 + ltm->tm_mon;
+	std::cout << (ltm->tm_mday > 9 ? "" : "0") << ltm->tm_mday;
+	std::cout << "_" << ltm->tm_hour;
+	std::cout << ltm->tm_min;
 	std::cout << ltm->tm_sec << "] ";
 }
 

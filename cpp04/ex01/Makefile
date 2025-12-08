@@ -1,6 +1,6 @@
-NAME = DiamondTrap
+NAME = Animals
 
-F = main ClapTrap ScavTrap FragTrap DiamondTrap
+F = main Animal Cat Dog WrongAnimal WrongCat
 
 SRC = $(foreach f, $(F), $(f).cpp)
 
