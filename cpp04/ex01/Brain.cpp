@@ -1,36 +1,23 @@
 #include "Brain.hpp"
 
-Brain::Brain( void ) { std::cout << "Brain constructed" << std::endl; }
+Brain::Brain() { std::cout << "Brain created" << std::endl; }
 
 Brain::Brain( const Brain &other ) {
-
-	for ( int i = 0; i < 100; i++ ) {
-
-		setIdea(other.getIdea(i));
-	}
-	std::cout << "Brain copy constructor called" << std::endl;
+	
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = other._ideas[i];
+	std::cout << "Brain copy created" << std::endl;
 }
 
 Brain	&Brain::operator=( const Brain &other ) {
 
-	for ( int i = 0; i < 100; i++ ) {
+	if (this != &other) {
 
-		setIdea(other.getIdea(i));
+		for (int i = 0; i < 100; i++)
+			_ideas[i] = other._ideas[i];
+		std::cout << "Brain assignement copy created" << std::endl;
 	}
-	std::cout << "Brain assignement copy constructor called" << std::endl;
+	return *this;
 }
 
-Brain::~Brain( void ) { std::cout << "Brain deleted" << std::endl; }
-
-std::string	&Brain::getIdea( int id ) const { return &_ideas[i]; }
-
-void	Brain::setIdea( const std::string &idea ) {
-
-	static int	id = 0;
-
-	_ideas[id] = idea;
-	id++;
-	if (id == 100) {
-		i = 0;
-	}
-}
+Brain::~Brain() { std::cout << "Brain destroyed" << std::endl; }

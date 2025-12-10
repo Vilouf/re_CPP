@@ -18,7 +18,5 @@ public:
 	~Dog();
 
 	void	makeSound( void ) const;
-	std::string	&getType( void ) const;
-	std::string	*getIdea( int ) const;
-	void	setIdea( const std::string & );
+	std::string	getType( void ) const;
 };
