@@ -1,6 +1,10 @@
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : _type("WrongCat") { std::cout << "WrongCat " << _type << " created" << std::endl; }
+WrongCat::WrongCat() {
+
+	_type = "WrongKitty";
+	std::cout << "WrongCat " << _type << " created" << std::endl;
+}
 
 WrongCat::WrongCat( const WrongCat &other ) {
 	
@@ -21,5 +25,3 @@ WrongCat	&WrongCat::operator=( const WrongCat &other ) {
 WrongCat::~WrongCat() { std::cout << "WrongCat " << _type << " destroyed" << std::endl; }
 
 void	WrongCat::makeSound( void ) const { std::cout << "WrongMeow" << std::endl; }
-
-std::string	WrongCat::getType( void ) const { return _type; }

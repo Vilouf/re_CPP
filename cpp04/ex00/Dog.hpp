@@ -4,10 +4,6 @@
 
 class Dog : public Animal {
 
-protected:
-
-	std::string	_type;
-
 public:
 
 	Dog();
@@ -16,5 +12,4 @@ public:
 	~Dog();
 
 	void	makeSound( void ) const;
-	std::string	getType( void ) const;
 };

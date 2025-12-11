@@ -1,6 +1,10 @@
 #include "Dog.hpp"
 
-Dog::Dog() : _type("Dog") { std::cout << "Dog " << _type << " created" << std::endl; }
+Dog::Dog() {
+
+	_type = "Doggy";
+	std::cout << "Dog " << _type << " created" << std::endl;
+}
 
 Dog::Dog( const Dog &other ) {
 	
@@ -21,5 +25,3 @@ Dog	&Dog::operator=( const Dog &other ) {
 Dog::~Dog() { std::cout << "Dog " << _type << " destroyed" << std::endl; }
 
 void	Dog::makeSound( void ) const { std::cout << "Woof" << std::endl; }
-
-std::string	Dog::getType( void ) const { return _type; }
