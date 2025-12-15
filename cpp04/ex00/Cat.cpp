@@ -17,7 +17,7 @@ Cat	&Cat::operator=( const Cat &other ) {
 	if (this != &other) {
 
 		_type = other._type;
-		std::cout << "Cat assignement copy " << _type << " created" << std::endl;
+		std::cout << "Cat asignment copy " << _type << " created" << std::endl;
 	}
 	return *this;
 }

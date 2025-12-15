@@ -21,7 +21,7 @@ Cat	&Cat::operator=( const Cat &other ) {
 		_type = other._type;
 		delete _brain;
 		_brain = new Brain(*other._brain);
-		std::cout << "Cat assignement copy " << _type << " created" << std::endl;
+		std::cout << "Cat asignment copy " << _type << " created" << std::endl;
 	}
 	return *this;
 }

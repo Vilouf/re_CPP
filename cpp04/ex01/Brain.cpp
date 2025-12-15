@@ -20,7 +20,7 @@ Brain	&Brain::operator=( const Brain &other ) {
 
 		for (int i = 0; i < 100; i++)
 			_ideas[i] = other._ideas[i];
-		std::cout << "Brain assignement copy created" << std::endl;
+		std::cout << "Brain asignment copy created" << std::endl;
 	}
 	return *this;
 }

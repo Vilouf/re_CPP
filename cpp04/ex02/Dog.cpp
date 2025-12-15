@@ -21,7 +21,7 @@ Dog	&Dog::operator=( const Dog &other ) {
 		_type = other._type;
 		delete _brain;
 		_brain = new Brain(*other._brain);
-		std::cout << "Dog assignement copy " << _type << " created" << std::endl;
+		std::cout << "Dog asignment copy " << _type << " created" << std::endl;
 	}
 	return *this;
 }

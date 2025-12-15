@@ -13,7 +13,7 @@ WrongAnimal	&WrongAnimal::operator=( const WrongAnimal &other ) {
 	if (this != &other) {
 
 		_type = other._type;
-		std::cout << "WrongAnimal assignement copy " << _type << " created" << std::endl;
+		std::cout << "WrongAnimal asignment copy " << _type << " created" << std::endl;
 	}
 	return *this;
 }

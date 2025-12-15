@@ -1,12 +1,12 @@
-NAME = Animals
+NAME = Materia
 
-F = main Animal Cat Dog WrongAnimal WrongCat Brain
+F = main AMateria Ice Cure Character MateriaSource
 
 SRC = $(foreach f, $(F), $(f).cpp)
 
 OBJ = $(SRC:.cpp=.o)
 
-GFLAG = -Wall -Wextra -Werror -std=c++98 -g3
+GFLAG = -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 
 all: $(NAME)
 

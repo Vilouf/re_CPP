@@ -17,7 +17,7 @@ Dog	&Dog::operator=( const Dog &other ) {
 	if (this != &other) {
 
 		_type = other._type;
-		std::cout << "Dog assignement copy " << _type << " created" << std::endl;
+		std::cout << "Dog asignment copy " << _type << " created" << std::endl;
 	}
 	return *this;
 }

@@ -17,7 +17,7 @@ WrongCat	&WrongCat::operator=( const WrongCat &other ) {
 	if (this != &other) {
 
 		_type = other._type;
-		std::cout << "WrongCat assignement copy " << _type << " created" << std::endl;
+		std::cout << "WrongCat asignment copy " << _type << " created" << std::endl;
 	}
 	return *this;
 }
