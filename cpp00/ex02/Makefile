@@ -6,7 +6,7 @@ SRC = $(foreach f, $(F), $(f).cpp)
 
 OBJ = $(SRC:.cpp=.o)
 
-GFLAG = -Wall -Wextra -Werror -std=c++98
+GFLAG = -Wall -Wextra -Werror -std=c++98 -g3
 
 all: $(NAME)
 
