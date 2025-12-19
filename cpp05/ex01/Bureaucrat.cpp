@@ -21,9 +21,9 @@ Bureaucrat	&Bureaucrat::operator=( const Bureaucrat &other ) {
 
 Bureaucrat::~Bureaucrat() { /*std::cout << "Bureaucrat " << _name << " destructed" << std::endl;*/ }
 
-const char*	Bureaucrat::GradeTooHighException::what() const throw() { return "Grade too high!"; }
+const char*	Bureaucrat::GradeTooHighException::what() const throw() { return "Bureaucrat: Grade too high!"; }
 
-const char*	Bureaucrat::GradeTooLowException::what() const throw() { return "Grade too low!"; }
+const char*	Bureaucrat::GradeTooLowException::what() const throw() { return "Bureaucrat: Grade too low!"; }
 
 const std::string	&Bureaucrat::getName( void ) const { return _name; }
 
@@ -41,6 +41,22 @@ void	Bureaucrat::demote( int amount ) {
 	if (_grade + amount > 150)
 		throw Bureaucrat::GradeTooLowException();
 	_grade += amount;
+}
+
+void	Bureaucrat::signForm( Form *f ) {
+
+	if (f) {
+
+		if (f->getIsSigned() == false) {
+
+			f->beSigned(*this);
+			std::cout << *this << " signed " << *f << std::endl;
+		}
+		else
+			std::cout << *this << " couldn't sign " << *f << " because it was already signed" << std::endl;
+	}
+	else
+		std::cout << "Null form? that doesn't make sense..." << std::endl;
 }
 
 std::ostream	&operator<<( std::ostream &o, const Bureaucrat &bc ) {

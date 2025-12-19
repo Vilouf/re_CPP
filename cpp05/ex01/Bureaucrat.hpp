@@ -1,6 +1,8 @@
 #pragma once
 
-#include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 
@@ -30,6 +32,8 @@ public:
 
 	void	promote( int );
 	void	demote( int );
+
+	void	signForm ( Form * );
 };
 
 std::ostream	&operator<<( std::ostream &, const Bureaucrat & );
