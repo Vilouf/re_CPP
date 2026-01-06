@@ -1,4 +1,7 @@
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main( void )
 {
@@ -6,13 +9,13 @@ int main( void )
 
 		Bureaucrat	A("aaaa", 5);
 		Bureaucrat	B(A);
-		Form	F("TestForm", 50, 10);
-		Form	H("Form2", 3, 1);
+		PresidentialPardonForm	F("test1");
+		PresidentialPardonForm	H("test2");
 
 		A.signForm(&F);
 		A.signForm(&F);
 		B.signForm(&F);
-		std::cout << H.getSignGrade() << std::endl;
+		std::cout << H.getTarget() << std::endl;
 		B.signForm(&H);
 	}
 	catch (std::exception &e) {

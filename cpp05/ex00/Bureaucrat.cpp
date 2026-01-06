@@ -19,7 +19,7 @@ Bureaucrat	&Bureaucrat::operator=( const Bureaucrat &other ) {
 	return *this;
 }
 
-Bureaucrat::~Bureaucrat() { /*std::cout << "Bureaucrat " << _name << " destructed" << std::endl;*/ }
+Bureaucrat::~Bureaucrat() {}
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw() { return "Grade too high!"; }
 

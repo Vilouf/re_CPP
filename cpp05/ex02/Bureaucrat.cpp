@@ -43,7 +43,7 @@ void	Bureaucrat::demote( int amount ) {
 	_grade += amount;
 }
 
-void	Bureaucrat::signForm( Form *f ) {
+void	Bureaucrat::signForm( AForm *f ) {
 
 	if (f) {
 

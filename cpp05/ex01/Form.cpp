@@ -17,8 +17,6 @@ Form	&Form::operator=( const Form &other ) {
 	if (this != &other) {
 
 		_isSigned = other._isSigned;
-		// _signGrade = other._signGrade;
-		// _execGrade = other._execGrade;
 	}
 	return *this;
 }
