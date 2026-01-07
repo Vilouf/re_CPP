@@ -17,3 +17,18 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=( const RobotomyRequestForm &
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
 std::string	&RobotomyRequestForm::getTarget( void ) const { return _target; }
+
+void	RobotomyRequestForm::execute( Bureaucrat const & executor ) const {
+
+	if (getIsSigned() == true) {
+
+		if (executor.getGrade() <= getExecGrade()) {
+
+			
+		}
+		else
+			throw AForm::GradeTooLowException();
+	}
+	else
+		throw AForm::FormNotSignedException();
+}

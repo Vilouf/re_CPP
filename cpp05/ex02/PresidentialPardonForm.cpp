@@ -17,3 +17,18 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=( const PresidentialPar
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
 std::string	&PresidentialPardonForm::getTarget( void ) const { return _target; }
+
+void	PresidentialPardonForm::execute( Bureaucrat const & executor ) const {
+
+	if (getIsSigned() == true) {
+
+		if (executor.getGrade() <= getExecGrade()) {
+
+			
+		}
+		else
+			throw AForm::GradeTooLowException();
+	}
+	else
+		throw AForm::FormNotSignedException();
+}

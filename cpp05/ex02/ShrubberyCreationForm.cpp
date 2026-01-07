@@ -17,3 +17,27 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=( const ShrubberyCreation
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 std::string	&ShrubberyCreationForm::getTarget( void ) const { return _target; }
+
+void	ShrubberyCreationForm::execute( Bureaucrat const & executor ) const {
+
+	if (getIsSigned() == true) {
+
+		if (executor.getGrade() <= getExecGrade()) {
+
+			std::ofstream	outfile(_target + "_shrubbery");
+			outfile << "       _-_       " << std::endl;
+			outfile << "    /~~   ~~\    " << std::endl;
+			outfile << " /~~         ~~\ " << std::endl;
+			outfile << "{               }" << std::endl;
+			outfile << " \  _-     -_  / " << std::endl;
+			outfile << "   ~  \\ //  ~   " << std::endl;
+			outfile << "_- -   | | _- _  " << std::endl;
+			outfile << "  _ -  | |   -_  " << std::endl;
+			outfile << "      // \\      " << std::endl;
+		}
+		else
+			throw AForm::GradeTooLowException();
+	}
+	else
+		throw AForm::FormNotSignedException();
+}

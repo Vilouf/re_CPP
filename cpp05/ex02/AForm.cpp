@@ -24,8 +24,8 @@ AForm	&AForm::operator=( const AForm &other ) {
 AForm::~AForm() {}
 
 const char*	AForm::GradeTooHighException::what() const throw() { return "Form: Grade too high!"; }
-
 const char*	AForm::GradeTooLowException::what() const throw() { return "Form: Grade too low!"; }
+const char*	AForm::FormNotSignedException::what() const throw() { return "Form not signed!"; }
 
 const std::string	&AForm::getName( void ) const { return _name; }
 bool	AForm::getIsSigned( void ) const { return _isSigned; }

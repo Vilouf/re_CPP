@@ -16,5 +16,5 @@ public:
 	~RobotomyRequestForm();
 
 	std::string	&getTarget( void ) const;
-	void	execute(Bureaucrat const & executor) const;
+	void	execute( Bureaucrat const & executor ) const;
 };
