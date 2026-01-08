@@ -1,22 +1,23 @@
-#include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
 int main( void )
 {
+	std::srand(std::time(NULL));
 	try {
 
-		Bureaucrat	A("aaaa", 5);
-		Bureaucrat	B(A);
-		PresidentialPardonForm	F("test1");
-		PresidentialPardonForm	H("test2");
+		Bureaucrat	A("bob", 5);
+		ShrubberyCreationForm	S("SSSSS");
+		RobotomyRequestForm	R("RRRRR");
+		PresidentialPardonForm	P("PPPPP");
 
-		A.signForm(&F);
-		A.signForm(&F);
-		B.signForm(&F);
-		std::cout << H.getTarget() << std::endl;
-		B.signForm(&H);
+		A.signForm(S);
+		A.signForm(R);
+		A.signForm(P);
+		A.executeForm(S);
+		A.executeForm(R);
+		A.executeForm(P);
 	}
 	catch (std::exception &e) {
 
