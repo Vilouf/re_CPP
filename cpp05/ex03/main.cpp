@@ -5,7 +5,7 @@ int main( void )
 	std::srand(std::time(NULL));
 	Intern someRandomIntern;
 	AForm* Form;
-	Form = someRandomIntern.makeForm("dsefesf request", "Bender");
+	Form = someRandomIntern.makeForm("shrubbery request", "Bender");
 
 	try {
 
