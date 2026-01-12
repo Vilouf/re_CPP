@@ -1,6 +1,6 @@
-NAME = convert
+NAME = serializer
 
-F = main ScalarConverter
+F = main Serializer Data
 
 SRC = $(foreach f, $(F), $(f).cpp)
 

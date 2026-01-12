@@ -1,6 +1,6 @@
-NAME = convert
+NAME = identify
 
-F = main ScalarConverter
+F = main Base
 
 SRC = $(foreach f, $(F), $(f).cpp)
 

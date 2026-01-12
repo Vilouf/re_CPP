@@ -4,6 +4,7 @@
 #include <cmath>
 #include <limits.h>
 #include <cstddef>
+#include <stdlib.h>
 
 class ScalarConverter {
 
@@ -15,7 +16,7 @@ private:
 	~ScalarConverter();
 
 public:
-	char convertChar(std::string &litteral)
-	static void	convert( const std::string & ) const;
+
+	static void	convert( const std::string & );
 };
 
