@@ -1,6 +1,6 @@
-NAME = Span
+NAME = 
 
-F = main Span
+F = main
 
 SRC = $(foreach f, $(F), $(f).cpp)
 
