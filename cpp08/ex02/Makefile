@@ -1,4 +1,4 @@
-NAME = 
+NAME = Mutant
 
 F = main
 
