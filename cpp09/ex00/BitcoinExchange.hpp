@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <iomanip>
 #include <map>
+#include <sstream>
 
 class BitcoinExchange {
 
@@ -19,7 +20,8 @@ public:
 	BitcoinExchange	&operator=( const BitcoinExchange & );
 	~BitcoinExchange();
 
-	class NoDataException : std::exception {
+	class NoDataException : public std::exception {
+	public:
 		virtual const char* what() const throw();
 	};
 

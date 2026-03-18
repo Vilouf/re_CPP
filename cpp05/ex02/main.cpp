@@ -12,6 +12,7 @@ int main( void )
 		RobotomyRequestForm	R("RRRRR");
 		PresidentialPardonForm	P("PPPPP");
 
+		std::cout << P << std::endl;
 		A.signForm(S);
 		A.signForm(R);
 		A.signForm(P);
