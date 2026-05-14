@@ -8,7 +8,7 @@ void	convertChar( double value ) {
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
-	char c = static_cast<char>(value); 
+	char c = static_cast<char>(value);
 	if (!std::isprint(c)) {
 
         std::cout << "Non displayable" << std::endl;

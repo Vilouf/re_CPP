@@ -13,6 +13,8 @@ private:
 
 	std::map<std::string, float>	_data;
 
+	bool	is_numeric(const std::string& s);
+
 public:
 
 	BitcoinExchange();
@@ -24,7 +26,11 @@ public:
 	public:
 		virtual const char* what() const throw();
 	};
+	class NoInputException : public std::exception {
+	public:
+		virtual const char* what() const throw();
+	};
 
 	void	printData( void );
-
+	void	prossessInput( const char * );
 };

@@ -20,7 +20,7 @@ int main() {
 	mstack.push(0);
 
 	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
+	MutantStack<int>::const_iterator ite = mstack.end();
 
 	++it;
 	--it;
@@ -35,7 +35,7 @@ int main() {
 	return 0;
 }
 
-// TEST WOTH STD::LIST
+//TEST WITH STD::LIST
 // int main() {
 
 // 	std::list<int> list;

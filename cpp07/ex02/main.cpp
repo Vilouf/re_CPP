@@ -17,7 +17,7 @@ int main(int, char**)
 
 	test[3] = 10.15;
 	try {
-		for (int i = 0; i < static_cast<int>(numbers.size()) + 3; i++) {
+		for (int i = 0; i < static_cast<int>(numbers.size()); i++) {
 			std::cout << numbers[i] << ", " << test[i] << std::endl;
 		}
 	}
