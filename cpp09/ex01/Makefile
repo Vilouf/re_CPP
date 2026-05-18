@@ -1,6 +1,6 @@
 NAME = RPN
 
-F = main
+F = main RPN
 
 SRC = $(foreach f, $(F), $(f).cpp)
 
