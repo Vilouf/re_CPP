@@ -31,28 +31,29 @@ void	Span::addNumber( int n ) {
 	_numbers.push_back(n);
 }
 
-int	Span::shortestSpan( void ) {
+long Span::shortestSpan( void )
+{
+    if (_numbers.size() < 2)
+        throw NoSpanException();
 
-	if (_numbers.size() < 2)
-		throw NoSpanException();
+    std::sort(_numbers.begin(), _numbers.end());
 
-	std::sort(_numbers.begin(), _numbers.end());
-
-	int	shortest = _numbers[_numbers.size() - 1];
-	for (size_t i = 1; i < _numbers.size(); i++) {
-
-		if (shortest > _numbers[i] - _numbers[i - 1])
-			shortest = _numbers[i] - _numbers[i - 1];
-	}
-	return shortest;
+    long	shortest = _numbers.back();
+    for (size_t i = 1; i < _numbers.size(); i++)
+    {
+        long diff = static_cast<long>(_numbers[i]) - _numbers[i - 1];
+        if (diff < shortest)
+            shortest = static_cast<long>(diff);
+    }
+    return shortest;
 }
 
-int	Span::longestSpan( void ) {
+long Span::longestSpan( void )
+{
+    if (_numbers.size() < 2)
+        throw NoSpanException();
 
-	if (_numbers.size() < 2)
-		throw NoSpanException();
+    std::sort(_numbers.begin(), _numbers.end());
 
-	std::sort(_numbers.begin(), _numbers.end());
-
-	return _numbers[_numbers.size() - 1] - _numbers[0];
+    return static_cast<long>(_numbers.back()) - _numbers.front();
 }

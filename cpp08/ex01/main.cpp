@@ -26,4 +26,16 @@ int	main( void ) {
 		std::cout << span.longestSpan() << std::endl;
 	}
 	catch(std::exception &e) { std::cerr << e.what() << std::endl; }
+	std::cout << "Overflow test" << std::endl;
+    try {
+        Span    sp = Span(3);
+
+        sp.addNumber(std::numeric_limits<int>::min());
+        sp.addNumber(std::numeric_limits<int>::max());
+        sp.addNumber(std::numeric_limits<int>::max() - 1);
+        std::cout << "shortestSpan:    " << sp.shortestSpan() << std::endl;
+        std::cout << "longestSpan:    " << sp.longestSpan() << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
 }

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <limits>
 
 class Span {
 
@@ -38,7 +39,7 @@ public:
         }
     }
 
-	int	shortestSpan( void );
-	int	longestSpan( void );
+	long	shortestSpan( void );
+	long	longestSpan( void );
 
 };
