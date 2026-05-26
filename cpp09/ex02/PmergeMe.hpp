@@ -6,6 +6,8 @@
 #include <sstream>
 #include <limits>
 #include <cstdlib>
+#include <algorithm>
+#include <sys/time.h>
 
 class PmergeMe {
 
@@ -13,6 +15,8 @@ private:
 
 	std::vector<int>	_vector;
 	std::list<int>		_list;
+
+	void CheckDuplicate();
 
 public:
 
@@ -28,5 +32,11 @@ public:
 
 	void	Parsing( int argc, const char *argv[] );
 
-	void	PrintContainers( void );
+	std::vector<int> 	getVector( void );
+	std::list<int> 		getList( void );
+	void 	setVector( std::vector<int> );
+	void 	setList( std::list<int> );
+
+	void	PrintVector( void );
+	void	PrintList( void );
 };

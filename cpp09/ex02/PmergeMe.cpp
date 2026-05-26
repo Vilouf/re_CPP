@@ -18,6 +18,14 @@ PmergeMe::~PmergeMe() {}
 
 const char*	PmergeMe::InputErrorException::what() const throw() { return "Error: Invalid input"; }
 
+void	PmergeMe::CheckDuplicate( void ) {
+
+	std::vector<int>	check(_vector);
+	std::sort( check.begin(), check.end() );
+	if (std::adjacent_find(check.begin(), check.end()) != check.end())
+        throw InputErrorException();
+}
+
 void	PmergeMe::Parsing(int argc, char const *argv[]) {
 
     for (int i = 1; i < argc; ++i) {
@@ -41,23 +49,31 @@ void	PmergeMe::Parsing(int argc, char const *argv[]) {
     }
 	if (_vector.empty())
 		throw InputErrorException();
+	CheckDuplicate();
 }
 
-void	PmergeMe::PrintContainers( void ) {
+std::vector<int>	PmergeMe::getVector( void ) { return _vector; }
+std::list<int>	PmergeMe::getList( void ) { return _list; }
+
+void 	PmergeMe::setVector( std::vector<int> vec ) { _vector = vec; }
+void 	PmergeMe::setList( std::list<int> lst ) { _list = lst; }
+
+void	PmergeMe::PrintVector( void ) {
 
 	std::vector<int>::iterator itv = _vector.begin();
 
-	std::cout << "vector container: ";
 	while (itv != _vector.end()) {
 
 		std::cout << " " << *itv;
 		itv++;
 	}
 	std::cout << std::endl;
+}
+
+void	PmergeMe::PrintList( void ) {
 
 	std::list<int>::iterator itl = _list.begin();
 
-	std::cout << "list container: ";
 	while (itl != _list.end()) {
 
 		std::cout << " " << *itl;
